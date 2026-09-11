@@ -1,0 +1,31 @@
+{
+  "version": "el-synth-v1",
+  "description": "Synthetic sanity tests for contradiction detection and evidence estimation",
+  "claim_pairs": [
+    {"claim_a": "X increases Y.", "claim_b": "X decreases Y.", "expected_relationship": "contradiction", "test_id": "T1"},
+    {"claim_a": "X improves Y in adults.", "claim_b": "X improves Y in children.", "expected_relationship": "neutral", "test_id": "T2"},
+    {"claim_a": "X improves Y.", "claim_b": "X improves Y.", "expected_relationship": "support", "test_id": "T3"},
+    {"claim_a": "X has no significant effect on Y.", "claim_b": "X significantly improves Y.", "expected_relationship": "contradiction", "test_id": "T4"},
+    {"claim_a": "X improves Y.", "claim_b": "X improves Z.", "expected_relationship": "neutral", "test_id": "T5"},
+    {"claim_a": "A causes B.", "claim_b": "A does not cause B.", "expected_relationship": "contradiction", "test_id": "T6"},
+    {"claim_a": "Treatment A is effective.", "claim_b": "Treatment B is effective.", "expected_relationship": "neutral", "test_id": "T7"},
+    {"claim_a": "Drug X reduces blood pressure.", "claim_b": "Drug X lowers blood pressure.", "expected_relationship": "support", "test_id": "T8"},
+    {"claim_a": "The algorithm is O(n^2).", "claim_b": "The algorithm is O(n log n).", "expected_relationship": "contradiction", "test_id": "T9"},
+    {"claim_a": "Vaccine efficacy is 95%.", "claim_b": "The vaccine is highly effective.", "expected_relationship": "support", "test_id": "T10"},
+    {"claim_a": "Exercise helps weight loss.", "claim_b": "Diet is crucial for weight loss.", "expected_relationship": "neutral", "test_id": "T11"},
+    {"claim_a": "Smoking causes cancer.", "claim_b": "Smoking has no link to cancer.", "expected_relationship": "contradiction", "test_id": "T12"},
+    {"claim_a": "Apples are fruits.", "claim_b": "Oranges are fruits.", "expected_relationship": "neutral", "test_id": "T13"},
+    {"claim_a": "Climate change is real.", "claim_b": "Global warming is occurring.", "expected_relationship": "support", "test_id": "T14"},
+    {"claim_a": "Water boils at 100C.", "claim_b": "Water boils at 90C.", "expected_relationship": "contradiction", "test_id": "T15"}
+  ],
+  "evidence_items": [
+    {"study_design": "Randomized Controlled Trial", "sample_size": "1240", "p_value": "0.001", "expected_category": "Strong", "test_id": "E1"},
+    {"study_design": "Case Study", "sample_size": "12", "p_value": "0.08", "expected_category": "Very Weak", "test_id": "E2"},
+    {"study_design": "Cohort Study", "sample_size": "350", "p_value": "0.03", "expected_category": "Moderate", "test_id": "E3"},
+    {"study_design": "Meta-analysis", "sample_size": "5000", "p_value": "0.0001", "expected_category": "Strong", "test_id": "E4"},
+    {"study_design": "Observational", "sample_size": "150", "p_value": "0.05", "expected_category": "Weak", "test_id": "E5"},
+    {"study_design": "Randomized Controlled Trial", "sample_size": "80", "p_value": "0.04", "expected_category": "Moderate", "test_id": "E6"},
+    {"study_design": "Expert Opinion", "sample_size": "1", "p_value": "N/A", "expected_category": "Very Weak", "test_id": "E7"},
+    {"study_design": "Cohort Study", "sample_size": "1200", "p_value": "0.01", "expected_category": "Strong", "test_id": "E8"}
+  ]
+}
